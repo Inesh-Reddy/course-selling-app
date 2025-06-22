@@ -13,8 +13,7 @@ const userLogin = (req, res, next) => {
 //   next();
 // };
 
-module.exports = userLogin;
-// module.exports = {
-//   userLogin,
-//   //   userSignup,
-// };
+module.exports = {
+  userLogin,
+  //   userSignup,
+};

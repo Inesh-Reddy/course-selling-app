@@ -1,11 +1,14 @@
 const express = require("express");
-const { adminAddCourse, adminDeleteCourse } = require("../controllers/admin");
-const { adminLogin } = require("../middleware/admin");
+const {
+  adminAddCourse,
+  adminDeleteCourse,
+  adminLogin,
+  adminSignUp,
+} = require("../controllers/admin");
 const adminRouter = express.Router();
 
-adminRouter
-  .route("/")
-  .post(adminLogin, adminAddCourse)
-  .delete(adminLogin, adminDeleteCourse);
+adminRouter.route("/login").get(adminLogin);
+adminRouter.route("/signup").post(adminSignUp);
+adminRouter.route("/").post(adminAddCourse).delete(adminDeleteCourse);
 
 module.exports = adminRouter;

@@ -1,9 +1,14 @@
 const express = require("express");
-const { viewPurchasedCourses } = require("../controllers/user");
-const userLogin = require("../middleware/user");
+const {
+  viewPurchasedCourses,
+  userSignup,
+  userLogin,
+} = require("../controllers/user");
 
 const userRouter = express.Router();
 
-userRouter.route("/purchases").get(userLogin, viewPurchasedCourses);
+userRouter.route("/login").get(userLogin);
+userRouter.route("/signup").post(userSignup);
+userRouter.route("/purchases").get(viewPurchasedCourses);
 
 module.exports = userRouter;
