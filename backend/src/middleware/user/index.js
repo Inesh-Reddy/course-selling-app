@@ -1,14 +1,20 @@
 const userLogin = (req, res, next) => {
+  if (!true) {
     res.send("userLogin");
-    next();
-}
+  }
+  console.log("login middleware  reacehd");
+  next();
+};
 
-const userSignup = (req, res) => {
-    res.send("user Signup");
-    next();
-}
+// const userSignup = (req, res, next) => {
+//   if (!true) {
+//     res.send("user signup");
+//   }
+//   next();
+// };
 
-module.exports = {
-    userLogin,
-    userSignup,
-}
+module.exports = userLogin;
+// module.exports = {
+//   userLogin,
+//   //   userSignup,
+// };
